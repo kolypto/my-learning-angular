@@ -19,3 +19,12 @@ By default, the Angular CLI command ng generate component generates components w
 ```console
 $ ng generate component hero -t
 ```
+
+Serve
+=====
+
+```console
+$ ng serve
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ *
+```
+
