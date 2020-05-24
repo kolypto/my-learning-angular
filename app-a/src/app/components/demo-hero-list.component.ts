@@ -7,8 +7,8 @@ import {Hero} from "../hero";
     <h1>{{title}}</h1>
     <p>Heroes:</p>
     <ul>
-      <li *ngFor="let hero of heroes; trackBy: trackByHeroes">
-        <app-hero-list-item
+      <li *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackByHeroes">
+        {{i}}: <app-hero-list-item
           [hero]="hero"
           (selected)="selectHero(hero)"
         ></app-hero-list-item>
