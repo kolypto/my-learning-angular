@@ -14,6 +14,9 @@ import {Hero} from "./hero";
       </li>
     </ul>
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
+
+    <h1>App Demo Template Reference</h1>
+    <app-demo-template-reference></app-demo-template-reference>
   `,
   styleUrls: ['./app.component.scss']
 })
