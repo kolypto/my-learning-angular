@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DemoTemplateReferenceComponent } from './demo-template-reference/demo-template-reference.component';
+import { DemoHeroListComponent } from './demo-hero-list/demo-hero-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoTemplateReferenceComponent
+    DemoTemplateReferenceComponent,
+    DemoHeroListComponent
   ],
   imports: [
     BrowserModule,
