@@ -5,7 +5,7 @@ import {Hero} from "../hero";
   selector: 'app-hero-list-item',
   template: `
     <span [style.text-decoration]="hero.deleted? 'line-through': ''">{{ hero.name }}</span>
-    <a *ngIf="!hero.deleted" (click)="deleteHero(hero)">[x]</a>
+    <a *ngIf="!hero.deleted" (click)="deleteHero(hero, $event)">[x]</a>
   `,
 })
 export class DemoHeroListItemComponent {
@@ -15,7 +15,8 @@ export class DemoHeroListItemComponent {
   constructor() {
   }
 
-  deleteHero(hero: Hero){
+  deleteHero(hero: Hero, $event: Event){
     hero.deleted = true;
+    console.log($event);
   }
 }
