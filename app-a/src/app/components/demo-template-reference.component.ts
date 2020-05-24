@@ -4,14 +4,16 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-demo-template-reference',
   template: `
     <label>Type something:
-      <input #customerInput> {{customerInput.value}}
+      <input #customerInput>
+      <button (click)="sendValue(customerInput.value)">Send</button>
+      <span>{{customerInput.value}}</span>
     </label>
   `,
 })
-export class DemoTemplateReferenceComponent implements OnInit {
+export class DemoTemplateReferenceComponent {
   constructor() { }
 
-  ngOnInit(): void {
+  sendValue(value: string){
+    console.log(value);
   }
-
 }
