@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoTemplateReferenceComponent } from './components/demo-template-reference.component';
-import { DemoHeroListComponent } from './components/demo-hero-list.component';
-import { DemoHeroListItemComponent } from "./components/demo-hero-list-item.component";
-import {DemoHeroManagerComponent} from "./components/demo-hero-manager.component";
+import { DemoTemplateReferenceComponent } from './heroes/demo-template-reference.component';
+import { DemoHeroListComponent } from './heroes/demo-hero-list.component';
+import { DemoHeroListItemComponent } from "./heroes/demo-hero-list-item.component";
+import {DemoHeroManagerComponent} from "./heroes/demo-hero-manager.component";
 import { HeroListItemStyleDirective } from './hero-list-item-style.directive';
-import { BlinkerDirective } from './hero/blinker.directive';
+import { BlinkerDirective } from './heroes/blinker.directive';
 
 @NgModule({
   declarations: [
