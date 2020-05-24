@@ -9,7 +9,7 @@ import {Hero} from "../hero";
     <p>Heroes:</p>
     <ul>
       <li *ngFor="let hero of heroes">
-        <span>{{ hero.name }}</span>
+        <span [ngStyle]="{'color': hero.deleted?'red':'inherit'}">{{ hero.name }}</span>
         <span *ngIf="hero.deleted">(removed)</span>
         <a (click)="deleteHero(hero)">[x]</a>
       </li>
