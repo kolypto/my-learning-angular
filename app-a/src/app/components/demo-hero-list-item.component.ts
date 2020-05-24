@@ -1,16 +1,23 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
 
 @Component({
   selector: 'app-hero-list-item',
   template: `
-    <span [style.text-decoration]="hero.deleted? 'line-through': ''">{{ hero.name }}</span>
-    <a *ngIf="!hero.deleted" (click)="deleteHero(hero, $event)">[x]</a>
+    <ng-container>
+      <a
+        [style.text-decoration]="hero.deleted? 'line-through': ''"
+        (click)="selectHero()"
+      >{{ hero.name }}</a>
+      <a *ngIf="!hero.deleted" (click)="deleteHero(hero, $event)">[x]</a>
+    </ng-container>
   `,
 })
 export class DemoHeroListItemComponent {
   @Input()
   hero: Hero;
+
+  @Output() selected = new EventEmitter<Hero>();
 
   constructor() {
   }
@@ -18,5 +25,9 @@ export class DemoHeroListItemComponent {
   deleteHero(hero: Hero, $event: Event){
     hero.deleted = true;
     console.log($event);
+  }
+
+  selectHero(){
+    this.selected.emit(this.hero);
   }
 }
