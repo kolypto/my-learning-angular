@@ -4,9 +4,8 @@ import {Hero} from "../hero";
 @Component({
   selector: 'app-hero-list-item',
   template: `
-    <span [style.color]="hero.deleted?'red':'inherit'">{{ hero.name }}</span>
-    <span *ngIf="hero.deleted">(removed)</span>
-    <a (click)="deleteHero(hero)">[x]</a>
+    <span [style.text-decoration]="hero.deleted? 'line-through': ''">{{ hero.name }}</span>
+    <a *ngIf="!hero.deleted" (click)="deleteHero(hero)">[x]</a>
   `,
 })
 export class DemoHeroListItemComponent {
