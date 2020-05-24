@@ -6,7 +6,7 @@ import {Hero} from "../hero";
   template: `
     <ng-container>
       <a
-        [style.text-decoration]="hero.deleted? 'line-through': ''"
+        [appHeroListItemStyle]="hero.deleted"
         (click)="selectHero()"
       >{{ hero.name }}</a>
       <a *ngIf="!hero.deleted" (click)="deleteHero(hero, $event)">[x]</a>

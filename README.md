@@ -10,14 +10,24 @@ $ cd my-app
 $ ng serve --open
 ```
 
-Generate a component
-====================
+Generate
+========
+
+Component
+---------
 
 
 By default, the Angular CLI command ng generate component generates components with a template file. You can override that by adding the "-t" (short for inlineTemplate=true) option:
 
 ```console
 $ ng generate component hero -t
+```
+
+Directive
+---------
+
+```console
+$ ng generate directive highlight
 ```
 
 Serve
