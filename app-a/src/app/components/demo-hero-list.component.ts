@@ -9,15 +9,13 @@ import {Hero} from "../hero";
     <p>Heroes:</p>
     <ul>
       <li *ngFor="let hero of heroes">
-        <span [ngStyle]="{'color': hero.deleted?'red':'inherit'}">{{ hero.name }}</span>
-        <span *ngIf="hero.deleted">(removed)</span>
-        <a (click)="deleteHero(hero)">[x]</a>
+        <app-hero-list-item [hero]="hero"></app-hero-list-item>
       </li>
     </ul>
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
   `,
 })
-export class DemoHeroListComponent implements OnInit {
+export class DemoHeroListComponent {
   title = 'Tour of heroes';
   heroes = [
     new Hero(1, 'Windstorm'),
@@ -30,12 +28,5 @@ export class DemoHeroListComponent implements OnInit {
   constructor() {
     this.title = 'Tour of Heroes';
     this.myHero = this.heroes[0];
-  }
-
-  deleteHero(hero: Hero){
-    hero.deleted = true;
-  }
-
-  ngOnInit(): void {
   }
 }

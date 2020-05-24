@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DemoTemplateReferenceComponent } from './components/demo-template-reference.component';
 import { DemoHeroListComponent } from './components/demo-hero-list.component';
+import { DemoHeroListItemComponent } from "./components/demo-hero-list-item.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoTemplateReferenceComponent,
-    DemoHeroListComponent
+    DemoHeroListComponent,
+    DemoHeroListItemComponent
   ],
   imports: [
     BrowserModule,
