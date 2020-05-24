@@ -9,6 +9,8 @@ import { DemoHeroListItemComponent } from "./heroes/demo-hero-list-item.componen
 import {DemoHeroManagerComponent} from "./heroes/demo-hero-manager.component";
 import { HeroListItemStyleDirective } from './hero-list-item-style.directive';
 import { BlinkerDirective } from './heroes/blinker.directive';
+import {TimersScreenComponent} from "./timer/timers-screen.component";
+import {CountdownTimerComponent} from "./timer/countdown-timer-component";
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { BlinkerDirective } from './heroes/blinker.directive';
     DemoHeroManagerComponent,
     HeroListItemStyleDirective,
     BlinkerDirective,
+    TimersScreenComponent,
+    CountdownTimerComponent,
   ],
   imports: [
     BrowserModule,

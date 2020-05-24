@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 
     <h1>App Demo Template Reference</h1>
     <app-demo-template-reference></app-demo-template-reference>
+
+    <app-timers-screen></app-timers-screen>
   `,
 })
 
