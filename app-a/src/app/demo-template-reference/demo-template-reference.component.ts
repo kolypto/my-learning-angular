@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
       <input #customerInput>{{customerInput.value}}
     </label>
   `,
-  styleUrls: ['./demo-template-reference.component.scss']
 })
 export class DemoTemplateReferenceComponent implements OnInit {
   customerInput: string;

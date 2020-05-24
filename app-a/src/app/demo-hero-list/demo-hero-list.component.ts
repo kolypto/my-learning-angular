@@ -14,7 +14,6 @@ import {Hero} from "../hero";
     </ul>
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
   `,
-  styleUrls: ['./demo-hero-list.component.scss']
 })
 export class DemoHeroListComponent implements OnInit {
   title = 'Tour of heroes';
