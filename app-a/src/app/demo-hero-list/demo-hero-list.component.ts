@@ -9,7 +9,9 @@ import {Hero} from "../hero";
     <p>Heroes:</p>
     <ul>
       <li *ngFor="let hero of heroes">
-        {{ hero.name }}
+        <span>{{ hero.name }}</span>
+        <span *ngIf="hero.deleted">(removed)</span>
+        <a (click)="deleteHero(hero)">[x]</a>
       </li>
     </ul>
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
@@ -28,6 +30,10 @@ export class DemoHeroListComponent implements OnInit {
   constructor() {
     this.title = 'Tour of Heroes';
     this.myHero = this.heroes[0];
+  }
+
+  deleteHero(hero: Hero){
+    hero.deleted = true;
   }
 
   ngOnInit(): void {

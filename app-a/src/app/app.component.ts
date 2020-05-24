@@ -11,7 +11,6 @@ import {Hero} from "./hero";
     <h1>App Demo Template Reference</h1>
     <app-demo-template-reference></app-demo-template-reference>
   `,
-  styleUrls: ['./app.component.scss']
 })
 
 export class AppComponent {
