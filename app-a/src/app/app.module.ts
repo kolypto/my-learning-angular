@@ -8,6 +8,7 @@ import { DemoHeroListComponent } from './components/demo-hero-list.component';
 import { DemoHeroListItemComponent } from "./components/demo-hero-list-item.component";
 import {DemoHeroManagerComponent} from "./components/demo-hero-manager.component";
 import { HeroListItemStyleDirective } from './hero-list-item-style.directive';
+import { BlinkerDirective } from './hero/blinker.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HeroListItemStyleDirective } from './hero-list-item-style.directive';
     DemoHeroListItemComponent,
     DemoHeroManagerComponent,
     HeroListItemStyleDirective,
+    BlinkerDirective,
   ],
   imports: [
     BrowserModule,

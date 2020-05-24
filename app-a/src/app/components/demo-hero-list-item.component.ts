@@ -5,7 +5,7 @@ import {Hero} from "../hero";
   selector: 'app-hero-list-item',
   template: `
     <ng-container>
-      <a
+      <a appBlinker
         [appHeroListItemStyle]="hero.deleted"
         (click)="selectHero()"
       >{{ hero.name }}</a>
