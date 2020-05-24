@@ -14,7 +14,7 @@ import {Hero} from "../hero";
         ></app-hero-list-item>
       </li>
     </ul>
-    <p *ngIf="heroes.length > 3">There are many heroes!</p>
+    <p *ngIf="heroes!.length > 3">There are many heroes!</p>
   `,
 })
 export class DemoHeroListComponent {
