@@ -7,7 +7,7 @@ import {Hero} from "../hero";
     <h1>{{title}}</h1>
     <p>Heroes:</p>
     <ul>
-      <li *ngFor="let hero of heroes">
+      <li *ngFor="let hero of heroes; trackBy: trackByHeroes">
         <app-hero-list-item
           [hero]="hero"
           (selected)="selectHero(hero)"
@@ -38,4 +38,7 @@ export class DemoHeroListComponent {
   selectHero(hero: Hero){
     this.selectedHero.emit(hero);
   }
+
+  // Optimize long list handling
+  trackByHeroes(index: number, hero: Hero): number { return hero.id; }
 }
