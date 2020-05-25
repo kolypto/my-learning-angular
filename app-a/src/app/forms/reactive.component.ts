@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {forbiddenNameValidator} from "./forbidden-name.directive";
+import {identityRevealedValidator} from "./identity-revealed.validator";
 
 @Component({
   selector: 'app-forms-reactive',
@@ -22,6 +23,10 @@ import {forbiddenNameValidator} from "./forbidden-name.directive";
         <div *ngIf="name.errors.forbiddenName">
           Name cannot be Bob.
         </div>
+      </div>
+
+      <div *ngIf="profileForm.errors?.identityRevealed && (profileForm.touched || profileForm.dirty)" class="cross-validation-error-message alert alert-danger">
+        Name cannot match alter ego.
       </div>
 
       <label> Last Name:
@@ -76,7 +81,9 @@ export class ReactiveComponent implements OnInit {
     aliases: this.fb.array([
       this.fb.control('')
     ]),
-  });
+  },
+    // Validators on a group ("cross-validation")
+    { validators: identityRevealedValidator });
 
   /** Easy access to aliases
    */
