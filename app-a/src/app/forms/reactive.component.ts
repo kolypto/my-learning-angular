@@ -1,13 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {forbiddenNameValidator} from "./forbidden-name.directive";
 
 @Component({
   selector: 'app-forms-reactive',
   template: `
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <label> First Name:
-        <input type="text" formControlName="firstName" required>
+        <input type="text" formControlName="firstName" required #name>
       </label>
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="name.errors.forbiddenName">
+          Name cannot be Bob.
+        </div>
+      </div>
 
       <label> Last Name:
         <input type="text" formControlName="lastName">
@@ -44,7 +59,11 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angul
 })
 export class ReactiveComponent implements OnInit {
   profileForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
+    firstName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+      forbiddenNameValidator(/bob/i),
+    ]),
     lastName: new FormControl(''),
     // Using the FormBuilder for this part (example)
     address: this.fb.group({

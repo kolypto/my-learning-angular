@@ -15,6 +15,7 @@ import { IndexComponent } from './forms/index.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ReactiveComponent } from './forms/reactive.component';
 import { TemplateComponent } from './forms/template.component';
+import {ForbiddenValidatorDirective} from "./forms/forbidden-name.directive";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TemplateComponent } from './forms/template.component';
     IndexComponent,
     ReactiveComponent,
     TemplateComponent,
+    ForbiddenValidatorDirective,
   ],
   imports: [
     BrowserModule,

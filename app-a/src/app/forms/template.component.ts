@@ -13,7 +13,8 @@ import {Hero} from "../hero";
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name"
-                 required [(ngModel)]="model.name" name="name" #spy
+                 required minlength="4" appForbiddenName="bob"
+                 [(ngModel)]="model.name" name="name" #spy
                  #name="ngModel"
           >
           <!-- ng-touched ng-dirty ng-valid  -->
@@ -23,6 +24,11 @@ import {Hero} from "../hero";
           <div [hidden]="name.valid || name.pristine"
                class="alert alert-danger">
             Validation errors: {{name.errors|json}}
+
+            <div *ngIf="name.errors.required">Name is required.</div>
+            <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
+            <div *ngIf="name.errors.forbiddenName">Name cannot be Bob.</div>
+
           </div>
         </div>
 
@@ -75,6 +81,6 @@ export class TemplateComponent {
   }
 
   onSubmit(){
-    
+
   }
 }
