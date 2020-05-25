@@ -17,6 +17,9 @@ import { ReactiveComponent } from './forms/reactive.component';
 import { TemplateComponent } from './forms/template.component';
 import {ForbiddenValidatorDirective} from "./forms/forbidden-name.directive";
 import {IdentityRevealedValidatorDirective} from "./forms/identity-revealed.validator";
+import { DynamicFormQuestionComponent } from './forms/dynamic/dynamic.component';
+import {DynamicFormComponent} from "./forms/dynamic/dynamic-form.component";
+import {QuestionService} from "./forms/dynamic/dynamic-question.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import {IdentityRevealedValidatorDirective} from "./forms/identity-revealed.vali
     ReactiveComponent,
     TemplateComponent,
     ForbiddenValidatorDirective,
-    IdentityRevealedValidatorDirective
+    IdentityRevealedValidatorDirective,
+    DynamicFormQuestionComponent,
+    DynamicFormComponent,
   ],
   imports: [
     BrowserModule,

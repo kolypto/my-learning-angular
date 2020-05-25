@@ -25,9 +25,9 @@ import {Hero} from "../hero";
                class="alert alert-danger">
             Validation errors: {{name.errors|json}}
 
-            <div *ngIf="name.errors.required">Name is required.</div>
-            <div *ngIf="name.errors.minlength">Name must be at least 4 characters long.</div>
-            <div *ngIf="name.errors.forbiddenName">Name cannot be Bob.</div>
+            <div *ngIf="name.errors?.required">Name is required.</div>
+            <div *ngIf="name.errors?.minlength">Name must be at least 4 characters long.</div>
+            <div *ngIf="name.errors?.forbiddenName">Name cannot be Bob.</div>
 
           </div>
         </div>
