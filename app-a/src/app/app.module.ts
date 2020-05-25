@@ -13,6 +13,7 @@ import {TimersScreenComponent} from "./timer/timers-screen.component";
 import {CountdownTimerComponent} from "./timer/countdown-timer-component";
 import { IndexComponent } from './forms/index.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ReactiveComponent } from './forms/reactive.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     TimersScreenComponent,
     CountdownTimerComponent,
     IndexComponent,
+    ReactiveComponent,
   ],
   imports: [
     BrowserModule,

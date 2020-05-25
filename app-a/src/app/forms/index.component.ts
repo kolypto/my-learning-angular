@@ -4,20 +4,14 @@ import {FormControl} from "@angular/forms";
 @Component({
   selector: 'app-forms-index',
   template: `
-    Template:
-    <input type="text" [(ngModel)]="inputValue"> {{inputValue}}
+    <h1>Reactive forms</h1>
+    <app-forms-reactive></app-forms-reactive>
 
-    Reactive:
-    <input type="text" [formControl]="inputControl"> {{inputControl.value}}
+    <h1>Template forms</h1>
   `,
   styles: [`
   `]
 })
 export class IndexComponent {
-  // Template form: simple value
-  inputValue = '';
-  // Reactive form: control object
-  inputControl = new FormControl('');
-
   constructor() { }
 }
