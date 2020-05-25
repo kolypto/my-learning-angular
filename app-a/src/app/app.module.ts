@@ -14,6 +14,7 @@ import {CountdownTimerComponent} from "./timer/countdown-timer-component";
 import { IndexComponent } from './forms/index.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ReactiveComponent } from './forms/reactive.component';
+import { TemplateComponent } from './forms/template.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ReactiveComponent } from './forms/reactive.component';
     CountdownTimerComponent,
     IndexComponent,
     ReactiveComponent,
+    TemplateComponent,
   ],
   imports: [
     BrowserModule,

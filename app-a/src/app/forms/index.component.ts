@@ -8,6 +8,7 @@ import {FormControl} from "@angular/forms";
     <app-forms-reactive></app-forms-reactive>
 
     <h1>Template forms</h1>
+    <app-form-template></app-form-template>
   `,
   styles: [`
   `]
