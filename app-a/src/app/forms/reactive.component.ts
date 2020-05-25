@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-forms-reactive',
   template: `
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <label> First Name:
-        <input type="text" formControlName="firstName">
+        <input type="text" formControlName="firstName" required>
       </label>
 
       <label> Last Name:
@@ -31,13 +31,20 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
         </label>
       </div>
 
-      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+      <div formArrayName="aliases">
+        <h3>Aliases</h3> <button (click)="addAlias()">Add Alias</button>
+        <div *ngFor="let alias of aliases.controls; let i=index">
+          <label>Alias: <input type="text" [formControlName]="i"></label>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!profileForm.valid">Submit</button>  Form status: {{profileForm.status}}
     </form>
   `,
 })
 export class ReactiveComponent implements OnInit {
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
+    firstName: new FormControl('', Validators.required),
     lastName: new FormControl(''),
     // Using the FormBuilder for this part (example)
     address: this.fb.group({
@@ -46,7 +53,22 @@ export class ReactiveComponent implements OnInit {
       state: [''],
       zip: ['']
     }),
+    // FormArray is used for dynamic forms
+    aliases: this.fb.array([
+      this.fb.control('')
+    ]),
   });
+
+  /** Easy access to aliases
+   */
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  // Add more elements to the form
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
 
   constructor(private fb: FormBuilder) { }
 
