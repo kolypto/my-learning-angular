@@ -20,7 +20,7 @@ Component
 By default, the Angular CLI command ng generate component generates components with a template file. You can override that by adding the "-t" (short for inlineTemplate=true) option:
 
 ```console
-$ ng generate component hero -t
+$ ng generate component --skip-tests -st hero/name
 ```
 
 Directive

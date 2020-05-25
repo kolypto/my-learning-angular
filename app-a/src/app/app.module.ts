@@ -11,6 +11,8 @@ import { HeroListItemStyleDirective } from './hero-list-item-style.directive';
 import { BlinkerDirective } from './heroes/blinker.directive';
 import {TimersScreenComponent} from "./timer/timers-screen.component";
 import {CountdownTimerComponent} from "./timer/countdown-timer-component";
+import { IndexComponent } from './forms/index.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,10 +25,13 @@ import {CountdownTimerComponent} from "./timer/countdown-timer-component";
     BlinkerDirective,
     TimersScreenComponent,
     CountdownTimerComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
