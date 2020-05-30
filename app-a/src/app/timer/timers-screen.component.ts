@@ -5,9 +5,6 @@ import {CountdownTimerComponent} from "./countdown-timer-component";
   selector: 'app-timers-screen',
   template: `
     <h1>Timers</h1>
-    <button (click)="show_timers = !show_timers;">Show timers</button>
-
-    <ng-container *ngIf="show_timers">
 
     <h2>Timer 1: using a #reference variable</h2>
         <button (click)="timer.restart()">Restart</button>
@@ -19,9 +16,7 @@ import {CountdownTimerComponent} from "./countdown-timer-component";
         <button (click)="restart()">Restart</button>
         <div class="seconds">{{seconds()}}</div>
         <app-countdown-timer></app-countdown-timer>
-
-    </ng-container>
-  `
+  `,
 })
 export class TimersScreenComponent implements AfterViewInit {
   // Timer 2: ViewChild
@@ -36,6 +31,4 @@ export class TimersScreenComponent implements AfterViewInit {
   }
   seconds() { return 0; }
   restart() { this.timerComponent.restart(); }
-
-  show_timers = false;
 }

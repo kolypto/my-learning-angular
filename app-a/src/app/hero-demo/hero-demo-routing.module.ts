@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HeroDemoComponent } from './hero-demo.component';
 
-const routes: Routes = [{ path: '', component: HeroDemoComponent }];
+const routes: Routes = [
+  { path: '', component: HeroDemoComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
