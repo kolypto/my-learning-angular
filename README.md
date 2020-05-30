@@ -16,7 +16,6 @@ Generate
 Component
 ---------
 
-
 By default, the Angular CLI command ng generate component generates components with a template file. You can override that by adding the "-t" (short for inlineTemplate=true) option:
 
 ```console
@@ -30,6 +29,25 @@ Directive
 $ ng generate directive highlight
 ```
 
+Service
+-------
+
+```console
+$ ng generate service User
+```
+
+
+Module
+------
+
+```console
+$ ng generate module CustomerDashboard
+$ ng generate module hero-demo --route heroes --module app.module
+
+$ ng generate component customer-dashboard/CustomerDashboard
+```
+
+
 Serve
 =====
 
@@ -37,4 +55,3 @@ Serve
 $ ng serve
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ *
 ```
-
