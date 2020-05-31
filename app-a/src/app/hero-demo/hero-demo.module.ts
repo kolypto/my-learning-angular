@@ -17,6 +17,7 @@ import {ForbiddenValidatorDirective} from "./forms/forbidden-name.directive";
 import {IdentityRevealedValidatorDirective} from "./forms/identity-revealed.validator";
 import {DynamicFormQuestionComponent} from "./forms/dynamic/dynamic.component";
 import {DynamicFormComponent} from "./forms/dynamic/dynamic-form.component";
+import {APP_CONFIG, HERO_DI_CONFIG} from "../app.config";
 
 
 @NgModule({
@@ -41,6 +42,10 @@ import {DynamicFormComponent} from "./forms/dynamic/dynamic-form.component";
     HeroDemoRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+  ],
+  providers: [
+    // Here's how a static configuration is provided
+    { provide: APP_CONFIG, useValue: HERO_DI_CONFIG },
   ],
   bootstrap: [HeroDemoComponent],
 })

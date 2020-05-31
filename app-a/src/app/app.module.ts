@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {Inject, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -7,6 +7,7 @@ import {TimersScreenComponent} from "./timer/timers-screen.component";
 import {CountdownTimerComponent} from "./timer/countdown-timer-component";
 import {HeroDemoModule} from "./hero-demo/hero-demo.module";
 import {IndexComponent} from "./index.component";
+import {APP_CONFIG, AppConfig} from "./app.config";
 
 @NgModule({
   declarations: [
@@ -23,4 +24,7 @@ import {IndexComponent} from "./index.component";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(@Inject(APP_CONFIG) config: AppConfig) {
+  }
+}
