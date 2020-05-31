@@ -18,7 +18,7 @@ import {HeroService} from "../hero.service";
     <p *ngIf="heroes!.length > 3">There are many heroes!</p>
   `,
 })
-export class DemoHeroListComponent {
+export class DemoHeroListComponent implements OnInit {
   title = 'Tour of heroes';
   heroes: Array<Hero>;
   myHero: Hero;
@@ -27,9 +27,17 @@ export class DemoHeroListComponent {
 
   constructor(private heroService: HeroService) {
     this.title = 'Tour of Heroes';
-    // Get heroes from the service
-    this.heroes = this.heroService.getHeroes();
-    this.myHero = this.heroes[0];
+  }
+
+  ngOnInit() {
+    let self = this;
+    // Load heroes from the service
+    this.heroService.heroes.subscribe({
+      next(heroes){
+        self.heroes = heroes;
+      },
+      error: console.error
+    })
   }
 
   selectHero(hero: Hero){
