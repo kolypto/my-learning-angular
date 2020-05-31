@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
-import {HeroService} from "../hero.service";
+import {HeroService, heroServiceProvider} from "../hero.service";
 
 @Component({
   selector: 'app-demo-hero-list',
@@ -17,6 +17,7 @@ import {HeroService} from "../hero.service";
     </ul>
     <p *ngIf="heroes!.length > 3">There are many heroes!</p>
   `,
+  providers: [heroServiceProvider],
 })
 export class DemoHeroListComponent implements OnInit {
   title = 'Tour of heroes';

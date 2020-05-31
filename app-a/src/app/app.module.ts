@@ -25,6 +25,7 @@ import {APP_CONFIG, AppConfig} from "./app.config";
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  // The @Inject decorator is a constructor parameter used to specify a custom provider of a dependency.
   constructor(@Inject(APP_CONFIG) config: AppConfig) {
   }
 }
