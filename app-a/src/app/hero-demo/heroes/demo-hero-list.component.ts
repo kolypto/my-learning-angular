@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Hero} from "../hero";
+import {HeroService} from "../hero.service";
 
 @Component({
   selector: 'app-demo-hero-list',
@@ -19,19 +20,15 @@ import {Hero} from "../hero";
 })
 export class DemoHeroListComponent {
   title = 'Tour of heroes';
-  heroes = [
-    new Hero(1, 'Windstorm'),
-    new Hero(13, 'Bombasto'),
-    new Hero(15, 'Magneta'),
-    new Hero(20, 'Tornado')
-  ];
-
+  heroes: Array<Hero>;
   myHero: Hero;
 
   @Output() selectedHero = new EventEmitter<Hero>();
 
-  constructor() {
+  constructor(private heroService: HeroService) {
     this.title = 'Tour of Heroes';
+    // Get heroes from the service
+    this.heroes = this.heroService.getHeroes();
     this.myHero = this.heroes[0];
   }
 
