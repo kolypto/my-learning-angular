@@ -11,7 +11,8 @@ const routes: Routes = [
   },
   { path: 'heroes',
     loadChildren: () => import('./hero-demo/hero-demo.module').then(m => m.HeroDemoModule)},
-  {path: 'timers', component: TimersScreenComponent}];
+  {path: 'timers', component: TimersScreenComponent},
+  { path: 'rxjs-playground', loadChildren: () => import('./rxjs-playground/rxjs-playground.module').then(m => m.RxjsPlaygroundModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
