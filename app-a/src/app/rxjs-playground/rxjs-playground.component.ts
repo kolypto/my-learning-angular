@@ -6,7 +6,8 @@ import {catchError, map, retry} from "rxjs/operators";
 @Component({
   selector: 'app-rxjs-playground',
   template: `
-    <rxjs-location></rxjs-location>
+    <p><rxjs-location></rxjs-location>
+    <p><rxjs-typeahead></rxjs-typeahead>
   `,
   styles: [],
 })
