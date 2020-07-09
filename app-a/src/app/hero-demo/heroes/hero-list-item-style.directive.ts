@@ -14,6 +14,7 @@ export class HeroListItemStyleDirective {
 
   el: ElementRef;
 
+  // An ElementRef is a wrapper around a DOM element, whose nativeElement property exposes the DOM element for the directive to manipulate.
   constructor(el: ElementRef) {
     this.el = el;
   }

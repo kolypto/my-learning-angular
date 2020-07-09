@@ -3,10 +3,10 @@ import {Hero} from "./hero";
 import {Observable} from "rxjs";
 import {UserService} from "../user.service";
 
-@Injectable({
-  // specify the provider of the decorated service class with the root injector, or with the injector for a specific NgModule.
-  providedIn: 'root',
-})
+// @Injectable({  // Not used anymore because there's a heroServiceProvider down there
+//   // specify the provider of the decorated service class with the root injector, or with the injector for a specific NgModule.
+//   providedIn: 'root',
+// })
 export class HeroService {
   /**
    * @param isAuthorized Only authorized user accounts have access to the list of heroes
