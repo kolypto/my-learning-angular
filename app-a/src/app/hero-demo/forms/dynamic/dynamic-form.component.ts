@@ -6,6 +6,7 @@ import { QuestionControlService }    from './question-control.service';
 
 @Component({
   selector: 'app-dynamic-form',
+  // This service is local to the component (and its children)
   providers: [ QuestionControlService ],
   template: `
     <div>

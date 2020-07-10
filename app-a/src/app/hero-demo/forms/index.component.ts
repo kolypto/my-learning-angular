@@ -5,6 +5,7 @@ import {QuestionService} from "./dynamic/dynamic-question.service";
 
 @Component({
   selector: 'app-forms-index',
+  // This service is local to the component (and its children)
   providers: [QuestionService],
   template: `
     <h1>Reactive forms</h1>

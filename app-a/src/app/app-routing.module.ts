@@ -10,9 +10,14 @@ const routes: Routes = [
     component: IndexComponent,
   },
   { path: 'heroes',
+    // This is how lazy loading of modules works:
+    // loadChildren: import().then()
+    // Also be sure to remove the HeroDemoModule from the AppModule.
     loadChildren: () => import('./hero-demo/hero-demo.module').then(m => m.HeroDemoModule)},
-  {path: 'timers', component: TimersScreenComponent},
-  { path: 'rxjs-playground', loadChildren: () => import('./rxjs-playground/rxjs-playground.module').then(m => m.RxjsPlaygroundModule) }];
+  {path: 'timers',
+    component: TimersScreenComponent},
+  { path: 'rxjs-playground',
+    loadChildren: () => import('./rxjs-playground/rxjs-playground.module').then(m => m.RxjsPlaygroundModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

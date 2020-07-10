@@ -26,6 +26,21 @@ export class DemoHeroListComponent implements OnInit {
 
   @Output() selectedHero = new EventEmitter<Hero>();
 
+
+  // Injector.
+  // Resolution modifiers
+
+  // @Optional() allows Angular to consider a service you inject to be optional.
+  // This means that the NullInjector above the root injector won't throw an error but will use `null`
+
+  // Use @Self() so that Angular will only look at the ElementInjector for the current component or directive.
+  // A good use case for @Self() is to inject a service but only if it is available on the current host element.
+  // To avoid errors in this situation, combine @Self() with @Optional().
+
+  // With @SkipSelf(), Angular starts its search for a service in the parent ElementInjector, rather than in the current one.
+  // Use case: same service is configured in the current @Component with different settings
+
+  // @Host() lets you designate a component as the last stop in the injector tree when searching for providers.
   constructor(private heroService: HeroService) {
     this.title = 'Tour of Heroes';
   }
