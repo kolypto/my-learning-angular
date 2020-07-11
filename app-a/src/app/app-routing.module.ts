@@ -17,7 +17,9 @@ const routes: Routes = [
   {path: 'timers',
     component: TimersScreenComponent},
   { path: 'rxjs-playground',
-    loadChildren: () => import('./rxjs-playground/rxjs-playground.module').then(m => m.RxjsPlaygroundModule) }];
+    loadChildren: () => import('./rxjs-playground/rxjs-playground.module').then(m => m.RxjsPlaygroundModule) },
+  { path: 'http-client',
+    loadChildren: () => import('./http-client/http-client.module').then(m => m.HttpClientModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

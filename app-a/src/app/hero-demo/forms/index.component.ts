@@ -19,6 +19,7 @@ import {QuestionService} from "./dynamic/dynamic-question.service";
   `,
 })
 export class IndexComponent {
+  // NOTE: It's an observable, rendered into the templates using an Async Pipe (| async)
   questions$: Observable<QuestionBase<any>[]>;
 
   constructor(service: QuestionService) {
