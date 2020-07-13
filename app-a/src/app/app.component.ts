@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
         <li><a routerLink="/timers" routerLinkActive="active">Timers</a></li>
         <li><a routerLink="/rxjs-playground" routerLinkActive="active">RxJS playground</a></li>
         <li><a routerLink="/http-client" routerLinkActive="active">HTTP Client</a></li>
+        <li><a routerLink="/app-routing" routerLinkActive="active">Routing</a></li>
       </ul>
     </nav>
 

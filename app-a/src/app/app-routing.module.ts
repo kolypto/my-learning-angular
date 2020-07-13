@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'rxjs-playground',
     loadChildren: () => import('./rxjs-playground/rxjs-playground.module').then(m => m.RxjsPlaygroundModule) },
   { path: 'http-client',
-    loadChildren: () => import('./http-client/http-client.module').then(m => m.HttpClientModule) }];
+    loadChildren: () => import('./http-client/http-client.module').then(m => m.HttpClientModule) },
+  { path: 'app-routing', loadChildren: () => import('./app-routing/app-routing.module').then(m => m.AppRoutingModule) }];
 //  { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
 //  { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 //  { path: 'hero/:id',      component: HeroDetailComponent },
