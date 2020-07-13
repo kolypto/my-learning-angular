@@ -8,6 +8,8 @@ import {CountdownTimerComponent} from "./timer/countdown-timer-component";
 import {HeroDemoModule} from "./hero-demo/hero-demo.module";
 import {IndexComponent} from "./index.component";
 import {APP_CONFIG, AppConfig} from "./app.config";
+import { FirstComponent } from './app-routing/first/first.component';
+import { SecondComponent } from './app-routing/second/second.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import {APP_CONFIG, AppConfig} from "./app.config";
     CountdownTimerComponent,
     TimersScreenComponent,
     IndexComponent,
+    FirstComponent,
+    SecondComponent,
   ],
   imports: [
     BrowserModule,
