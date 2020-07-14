@@ -9,7 +9,7 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
     <nav>
       <ul>
         <li><a routerLink="first-component" routerLinkActive="active">First Component</a></li>
-        <li><a routerLink="second-component" routerLinkActive="active">Second Component</a></li>
+        <li><a [routerLink]="['second-component', 1]" routerLinkActive="active">Second Component, id=1</a></li>
         <li><a routerLink="person-info" [queryParams]="{id: 1}" routerLinkActive="active">Person info (parameter)</a></li>
         <li><a routerLink="404" routerLinkActive="active">non-existent page</a></li>
       </ul>

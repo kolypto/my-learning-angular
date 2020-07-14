@@ -13,7 +13,8 @@ const routes: Routes = [
     children: [
       // Two static routes
       { path: 'first-component', component: FirstComponent },
-      { path: 'second-component', component: SecondComponent },
+      { path: 'second-component/:id', component: SecondComponent,
+        data: {title: 'Page title from routing table'}},
       // A route with parameters
       { path: 'person-info', component: PersonInfoComponent,
         canActivate: [SecurityGuard]
