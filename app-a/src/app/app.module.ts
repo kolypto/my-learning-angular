@@ -10,6 +10,7 @@ import {IndexComponent} from "./index.component";
 import {APP_CONFIG, AppConfig} from "./app.config";
 import { UrlNotFoundComponent } from './app-routing/url-not-found/url-not-found.component';
 import { PersonInfoComponent } from './app-routing/person-info/person-info.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PersonInfoComponent } from './app-routing/person-info/person-info.compo
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HeroDemoModule,
   ],
