@@ -11,6 +11,8 @@ import {APP_CONFIG, AppConfig} from "./app.config";
 import { UrlNotFoundComponent } from './app-routing/url-not-found/url-not-found.component';
 import { PersonInfoComponent } from './app-routing/person-info/person-info.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     AppRoutingModule,
     HeroDemoModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

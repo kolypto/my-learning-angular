@@ -84,3 +84,20 @@ Build:
 ```console
 $ ng build --prod --localize
 ```
+
+Service Workers
+===============
+
+Install: 
+
+```console
+$ ng add @angular/pwa --project *project-name*
+```
+
+Serve:
+
+```console
+$ ng build --prod
+$ npm install http-server
+$ http-server -p 8080 -c-1 dist/<project-name>
+```
