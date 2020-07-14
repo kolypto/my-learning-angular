@@ -12,6 +12,7 @@ import { Component } from '@angular/core';
         <li><a routerLink="/http-client" routerLinkActive="active">HTTP Client</a></li>
         <li><a routerLink="/app-routing" routerLinkActive="active">Routing</a></li>
         <li><a routerLink="/app-animations" routerLinkActive="active">Animations</a></li>
+        <li><a routerLink="/app-translations" routerLinkActive="active">Translations</a></li>
       </ul>
     </nav>
 

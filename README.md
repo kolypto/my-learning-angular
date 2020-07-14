@@ -61,3 +61,11 @@ Serve
 $ ng serve
 ** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ *
 ```
+
+Localize
+========
+
+```console
+$ ng add @angular/localize
+```
+
