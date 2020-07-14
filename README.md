@@ -13,6 +13,7 @@ $ ng serve --open
 Generate
 ========
 
+
 Component
 ---------
 
@@ -53,6 +54,24 @@ Guard
 ```console
 $ ng generate guard app-routing/security
 ```
+
+
+App Shell
+---------
+
+```console
+$ ng generate app-shell
+```
+
+Run:
+
+```console
+$ ng run my-app:app-shell
+    or 
+$ ng run my-app:app-shell:production
+```
+
+
 
 Serve
 =====

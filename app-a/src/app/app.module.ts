@@ -13,6 +13,7 @@ import { PersonInfoComponent } from './app-routing/person-info/person-info.compo
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import { environment } from '../environments/environment';
     PersonInfoComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     HeroDemoModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
