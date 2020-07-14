@@ -6,6 +6,7 @@ import {FirstComponent} from "./first/first.component";
 import {SecondComponent} from "./second/second.component";
 import {UrlNotFoundComponent} from "./url-not-found/url-not-found.component";
 import {PersonInfoComponent} from "./person-info/person-info.component";
+import {SecurityGuard} from "./security.guard";
 
 const routes: Routes = [
   { path: '', component: AppRoutingComponent,
@@ -14,10 +15,14 @@ const routes: Routes = [
       { path: 'first-component', component: FirstComponent },
       { path: 'second-component', component: SecondComponent },
       // A route with parameters
-      { path: 'person-info', component: PersonInfoComponent },
+      { path: 'person-info', component: PersonInfoComponent,
+        canActivate: [SecurityGuard]
+      },
+      // Wildcard route for page not found (for children)
+      { path: '**', component: UrlNotFoundComponent },
     ]
   },
-  // Wildcard route for page not found
+  // Wildcard route for page not found (for top-level)
   { path: '**', component: UrlNotFoundComponent },
 ];
 

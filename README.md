@@ -47,6 +47,12 @@ $ ng generate module hero-demo --route heroes --module app.module
 $ ng generate component customer-dashboard/CustomerDashboard
 ```
 
+Guard
+-----
+
+```console
+$ ng generate guard app-routing/security
+```
 
 Serve
 =====
