@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Inject, LOCALE_ID} from '@angular/core';
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -21,4 +22,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  // Locale in <html lang>
+  constructor(@Inject(DOCUMENT) private document: Document,
+              @Inject(LOCALE_ID) private locale: string
+              ) {
+    this.document.documentElement.lang = this.locale;
+  }
 }

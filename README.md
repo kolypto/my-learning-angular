@@ -65,7 +65,22 @@ $ ng serve
 Localize
 ========
 
+Install:
+
 ```console
 $ ng add @angular/localize
 ```
 
+Extract:
+
+```console
+$ ng xi18n
+```
+
+Copy and translate: `src/locale/messages.ru.xlf`
+
+Build: 
+
+```console
+$ ng build --prod --localize
+```
