@@ -3,7 +3,7 @@ Initialize
 
 ```console
 $ sudo npm install -g @angular/cli
-$ ng new my-app
+$ ng new my-app --strict
 ? Would you like to add Angular routing? Yes
 ? Which stylesheet format would you like to use? SCSS
 $ cd my-app
